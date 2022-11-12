@@ -29,9 +29,9 @@ Scenario: Edit full name in profile
     And I wait for 5 seconds
     And I try to go to profile
     And I wait for 5 seconds
-    And I try to set fullname to "new name"
+    And I try to set fullname to "new-name"
     And I save changes
-    Then I expect "new name" is my fullname profile
+    Then I expect "new-name" is my fullname profile
 
 @user3 @web
 Scenario: Edit slug in profile
@@ -47,9 +47,9 @@ Scenario: Edit slug in profile
     And I wait for 5 seconds
     And I try to go to profile
     And I wait for 5 seconds
-    And I try to set slug to "new slug"
+    And I try to set slug to "new-slug"
     And I save changes
-    Then I expect "new slug" is my slug profile
+    Then I expect "new-slug" is my slug profile
 
 @user4 @web
 Scenario: Edit location in profile
@@ -65,9 +65,9 @@ Scenario: Edit location in profile
     And I wait for 5 seconds
     And I try to go to profile
     And I wait for 5 seconds
-    And I try to set location to "new location"
+    And I try to set location to "new-location"
     And I save changes
-    Then I expect "new location" is my location profile
+    Then I expect "new-location" is my location profile
 
 @user5 @web
 Scenario: Edit Bio in profile
@@ -83,6 +83,6 @@ Scenario: Edit Bio in profile
     And I wait for 5 seconds
     And I try to go to profile
     And I wait for 5 seconds
-    And I try to set Bio to "new Bio"
+    And I try to set Bio to "new-bio"
     And I save changes
-    Then I expect "new Bio" is my Bio profile
+    Then I expect "new-bio" is my Bio profile

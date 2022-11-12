@@ -12,7 +12,7 @@ Scenario: Forgot failed with non-existent user
 Scenario: Forgot failed without email
     Given I navigate to page "http://localhost:2368/ghost/#/signin"
     And I wait for 5 seconds
-    When I fill login with ""
+    When I fill login with "" and ""
     And I try to remember password
     Then I expect to see "We need your email address to reset your password!"
 
@@ -20,7 +20,7 @@ Scenario: Forgot failed without email
 Scenario: Forgot failed with invalid email format
     Given I navigate to page "http://localhost:2368/ghost/#/signin"
     And I wait for 5 seconds
-    When I fill login with "emailNonExistent"
+    When I fill login with "emailNonExistent" and ""
     And I try to remember password
     Then I expect to see "We need your email address to reset your password!"
 
@@ -28,7 +28,7 @@ Scenario: Forgot failed with invalid email format
 Scenario: Forgot failed with non-existent user many times
     Given I navigate to page "http://localhost:2368/ghost/#/signin"
     And I wait for 5 seconds
-    When I fill login with "emailNonExistent@email.com"
+    When I fill login with "emailNonExistent@email.com" and ""
     And I try to remember password
     And I try to remember password
     And I try to remember password
