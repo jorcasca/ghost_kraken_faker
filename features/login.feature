@@ -6,7 +6,7 @@ Scenario: Login failed without email and password
     And I wait for 5 seconds
     When I fill login with "" and ""
     And I try to login
-    Then I expect to see "Please fill out the form to sign in."
+    Then I expect to see in signin "Please fill out the form to sign in."
 
 @user2 @web
 Scenario: Login failed without email
@@ -14,7 +14,7 @@ Scenario: Login failed without email
     And I wait for 5 seconds
     When I fill login with "" and "p4ssw0rd.."
     And I try to login
-    Then I expect to see "Please fill out the form to sign in."
+    Then I expect to see in signin "Please fill out the form to sign in."
 
 @user3 @web
 Scenario: Login failed without password
@@ -22,7 +22,7 @@ Scenario: Login failed without password
     And I wait for 5 seconds
     When I fill login with "email@email.com" and ""
     And I try to login
-    Then I expect to see "Please fill out the form to sign in."
+    Then I expect to see in signin "Please fill out the form to sign in."
 
 @user4 @web
 Scenario: Login failed with invalid email format
@@ -30,7 +30,7 @@ Scenario: Login failed with invalid email format
     And I wait for 5 seconds
     When I fill login with "email" and "p4ssw0rd.."
     And I try to login
-    Then I expect to see "Please fill out the form to sign in."
+    Then I expect to see in signin "Please fill out the form to sign in."
 
 @user5 @web
 Scenario: Login failed with non-existent user
@@ -38,4 +38,4 @@ Scenario: Login failed with non-existent user
     And I wait for 5 seconds
     When I fill login with "emailNonExistent@email.com" and "p4ssw0rd.."
     And I try to login
-    Then I expect to see "There is no user with that email address."
+    Then I expect to see in signin "There is no user with that email address."

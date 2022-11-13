@@ -9,7 +9,7 @@ Scenario: Go to profile
     And I wait for 5 seconds
     And I navigate to page "http://localhost:2368/ghost/#/signin"
     And I wait for 5 seconds
-    When I fill login with "email@email.com" and "p4ssw0rd.."
+    And I fill login with "email@email.com" and "p4ssw0rd.."
     And I try to login
     And I wait for 5 seconds
     And I try to go to profile
@@ -24,7 +24,7 @@ Scenario: Edit full name in profile
     And I wait for 5 seconds
     And I navigate to page "http://localhost:2368/ghost/#/signin"
     And I wait for 5 seconds
-    When I fill login with "email@email.com" and "p4ssw0rd.."
+    And I fill login with "email@email.com" and "p4ssw0rd.."
     And I try to login
     And I wait for 5 seconds
     And I try to go to profile
@@ -42,7 +42,7 @@ Scenario: Edit slug in profile
     And I wait for 5 seconds
     And I navigate to page "http://localhost:2368/ghost/#/signin"
     And I wait for 5 seconds
-    When I fill login with "email@email.com" and "p4ssw0rd.."
+    And I fill login with "email@email.com" and "p4ssw0rd.."
     And I try to login
     And I wait for 5 seconds
     And I try to go to profile
@@ -60,7 +60,7 @@ Scenario: Edit location in profile
     And I wait for 5 seconds
     And I navigate to page "http://localhost:2368/ghost/#/signin"
     And I wait for 5 seconds
-    When I fill login with "email@email.com" and "p4ssw0rd.."
+    And I fill login with "email@email.com" and "p4ssw0rd.."
     And I try to login
     And I wait for 5 seconds
     And I try to go to profile
@@ -78,7 +78,7 @@ Scenario: Edit Bio in profile
     And I wait for 5 seconds
     And I navigate to page "http://localhost:2368/ghost/#/signin"
     And I wait for 5 seconds
-    When I fill login with "email@email.com" and "p4ssw0rd.."
+    And I fill login with "email@email.com" and "p4ssw0rd.."
     And I try to login
     And I wait for 5 seconds
     And I try to go to profile
