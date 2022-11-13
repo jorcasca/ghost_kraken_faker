@@ -44,7 +44,12 @@ Then("I expect to see in signin {string}", async function (string) {
     let response = await this.driver.$('.main-error');
     let text = await response.getText();
     expect(response).to.not.equal(null);
-    expect(text).to.contains(string);
+
+    if (text.includes("Too many attempts")) {
+      expect(text).to.contains("Too many attempts");
+    } else {
+      expect(text).to.contains(string);
+    }    
   }
 });
 
