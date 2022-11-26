@@ -1,6 +1,6 @@
 Feature: Forgot
 
-@user3 @web
+@user4 @web
 Scenario Outline: Forgot failed with invalid email format
     Given I navigate to page "http://localhost:2368/ghost/#/signin"
     And I wait for 5 seconds
@@ -10,8 +10,12 @@ Scenario Outline: Forgot failed with invalid email format
     Examples:
       | email | password | error |
       | "$name_1" | "$string_date_1" | "We need your email address to reset your password!" |
+      | "$name_2" | "$string_date_2" | "We need your email address to reset your password!" |
+      | "$name_3" | "$string_date_3" | "We need your email address to reset your password!" |
+      | "$name_4" | "$string_date_4" | "We need your email address to reset your password!" |
+      | "$name_5" | "$string_date_5" | "We need your email address to reset your password!" |
 
-@user4 @web
+@user5 @web
 Scenario Outline: Forgot failed with non-existent user many times
     Given I navigate to page "http://localhost:2368/ghost/#/signin"
     And I wait for 5 seconds
@@ -25,3 +29,7 @@ Scenario Outline: Forgot failed with non-existent user many times
     Examples:
       | email | password | error |
       | "$email_1" | "$string_date_1" | "Too many attempts try again in an hour" |
+      | "$email_2" | "$string_date_2" | "Too many attempts try again in an hour" |
+      | "$email_3" | "$string_date_3" | "Too many attempts try again in an hour" |
+      | "$email_4" | "$string_date_4" | "Too many attempts try again in an hour" |
+      | "$email_5" | "$string_date_5" | "Too many attempts try again in an hour" |
