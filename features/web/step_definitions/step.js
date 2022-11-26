@@ -4,7 +4,7 @@ var { expect } = require("chai");
 //-------------------------------CREATE ACCOUNT-----------------------------
 
 When(
-  "I fill register with {string} and {string} and {string} and {string}",
+  "I fill register with {kraken-string} and {kraken-string} and {kraken-string} and {string}",
   async function (title, name, email, password) {
     var url = await this.driver.getUrl();
     if (url == "http://localhost:2368/ghost/#/setup") {
@@ -12,6 +12,36 @@ When(
       await titleInput.keys(title);
       let nameInput = this.driver.$("#name");
       await nameInput.setValue(name);
+      let emailInput = this.driver.$("#email");
+      await emailInput.setValue(email);
+      let passwordInput = this.driver.$("#password");
+      await passwordInput.setValue(password);
+    }
+  }
+);
+
+When(
+  "I fill register without title {kraken-string} and {kraken-string} and {string}",
+  async function (name, email, password) {
+    var url = await this.driver.getUrl();
+    if (url == "http://localhost:2368/ghost/#/setup") {
+      let nameInput = this.driver.$("#name");
+      await nameInput.setValue(name);
+      let emailInput = this.driver.$("#email");
+      await emailInput.setValue(email);
+      let passwordInput = this.driver.$("#password");
+      await passwordInput.setValue(password);
+    }
+  }
+);
+
+When(
+  "I fill register without name {kraken-string} and {kraken-string} and {string}",
+  async function (title, email, password) {
+    var url = await this.driver.getUrl();
+    if (url == "http://localhost:2368/ghost/#/setup") {
+      let titleInput = this.driver.$("#blog-title");
+      await titleInput.keys(title);
       let emailInput = this.driver.$("#email");
       await emailInput.setValue(email);
       let passwordInput = this.driver.$("#password");
@@ -68,7 +98,7 @@ Then("I expect to be done", async function () {
 //-------------------------------LOGIN--------------------------------
 
 When(
-  "I fill login with {string} and {string}",
+  "I fill login with {kraken-string} and {kraken-string}",
   async function (email, password) {
     var url = await this.driver.getUrl();
     if (url == "http://localhost:2368/ghost/#/signin") {
