@@ -71,7 +71,7 @@ Then("I expect to see in setup {string}", async function (string) {
 Then("I expect to see in signin {string}", async function (string) {
   var url = await this.driver.getUrl();
   if (url == "http://localhost:2368/ghost/#/signin") {
-    let response = await this.driver.$('.main-error');
+    let response = await this.driver.$(".main-error");
     let text = await response.getText();
     expect(response).to.not.equal(null);
 
@@ -79,7 +79,7 @@ Then("I expect to see in signin {string}", async function (string) {
       expect(text).to.contains("Too many attempts");
     } else {
       expect(text).to.contains(string);
-    }    
+    }
   }
 });
 
@@ -110,6 +110,22 @@ When(
   }
 );
 
+When("I fill login without email into login {kraken-string}", async function (password) {
+  var url = await this.driver.getUrl();
+  if (url == "http://localhost:2368/ghost/#/signin") {
+    let passwordInput = this.driver.$("#password");
+    await passwordInput.setValue(password);
+  }
+});
+
+When("I fill login without password into login {kraken-string}", async function (email) {
+  var url = await this.driver.getUrl();
+  if (url == "http://localhost:2368/ghost/#/signin") {
+    let emailInput = this.driver.$("#identification");
+    await emailInput.setValue(email);
+  }
+});
+
 When("I try to login", async function () {
   var url = await this.driver.getUrl();
   if (url == "http://localhost:2368/ghost/#/signin") {
@@ -137,6 +153,16 @@ Then("I expect to be logged out", async function () {
 When("I try to remember password", async function () {
   var url = await this.driver.getUrl();
   if (url == "http://localhost:2368/ghost/#/signin") {
+    let rememberButton = await this.driver.$("#ember6");
+    await rememberButton.click();
+  }
+});
+
+When("I fill login without email {kraken-string}", async function (password) {
+  var url = await this.driver.getUrl();
+  if (url == "http://localhost:2368/ghost/#/signin") {
+    let passwordInput = this.driver.$("#password");
+    await passwordInput.setValue(password);
     let rememberButton = await this.driver.$("#ember6");
     await rememberButton.click();
   }
