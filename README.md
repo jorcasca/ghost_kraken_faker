@@ -5,6 +5,9 @@
 *  [Ghost installed and running](https://ghost.org/docs/install/local/)
 *  [Chai assertion](https://www.chaijs.com/guide/installation/)
 *  [Kraken](https://thesoftwaredesignlab.github.io/Kraken/)
+*  [Cypress](https://www.cypress.io/)
+*  [Faker](https://fakerjs.dev/api/)
+  
 
 ## Steps to run the test
 
@@ -16,6 +19,8 @@
     npm install -g appium          // in case of error
     npm install chai               // in case of error
     kraken-node run
+    cypress open                   // Run Web Cypress
+    cypress run --headless         // Run Test Cypress
     ```
 4. Watch e2e test running.
 
